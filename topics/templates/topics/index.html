@@ -1,0 +1,29 @@
+<head>
+  {% load staticfiles %}
+  <link rel="stylesheet" type="text/css" href="{% static 'topics/index_style.css' %}"/>
+  <title>
+    This is my website
+  </title>
+</head>
+
+<body>
+    {% if list_of_topics %}
+    <div class="table">
+      <ul>
+        {% for topic in list_of_topics %}
+        <li>
+          <div class="box">
+            <p>
+              {{ topic.topic_text }}
+            </p>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% else %}
+      <p>
+        There are not topics to display :(
+      </p>
+    {% endif %}
+</body>

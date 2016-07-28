@@ -1,0 +1,21 @@
+body{
+    background-color: #0F0F0F;
+}
+li{
+  list-style-type: none;
+  color: white;
+  padding-bottom: 1em;
+  margin: 0;
+}
+
+div.table{
+  min-height: 10em;
+}
+
+div.box{
+  width: 70%;
+  margin: auto;
+  min-height: 5em;
+  border: 1px solid black;
+  background-color: gray;
+}
