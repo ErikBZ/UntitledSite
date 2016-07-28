@@ -10,4 +10,8 @@ Long Term Goals
 5. Maybe deploy this somehow, Idk
 
 Short Term Goals
-a. Get topics listed out on the index page
+
+/// DONE a. Get topics listed out on the index page
+b. Be able to click on a topic and see the description
+c. Create a banner where you can choose to log in or submit
+d. Be able to log into the website

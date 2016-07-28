@@ -11,19 +11,19 @@
     <div class="table">
       <ul>
         {% for topic in list_of_topics %}
-        <li>
+        <!-- link to itself for now then i'll link them to their own posts -->
+        <li><a href="/topics/{{topic.id}}/">
           <div class="box">
-            <p>
-              {{ topic.topic_text }}
+            <p> {{ forloop.counter }}: {{ topic.topic_text }}</p>
+            <p id="post_info">
+              By user: {{ topic.user_who_posted }} at {{ topic.pub_date }}
             </p>
           </div>
-        </li>
+        </a></li>
         {% endfor %}
       </ul>
     </div>
     {% else %}
-      <p>
-        There are not topics to display :(
-      </p>
+      <p> There are not topics to display :(</p>
     {% endif %}
 </body>

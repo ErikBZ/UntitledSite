@@ -10,11 +10,12 @@ class TopicAdmin(admin.ModelAdmin):
         ('Date Information', {'fields': ['pub_date']}),
     ]
 
-    #Cannot change who posted the topic
+    # Cannot change who posted the topic
+    # For now I'll be able to cahnge topix info and description info
+    # for testing and stuff
     def get_readonly_fields(self, request, obj=None):
         if obj:
-            return self.readonly_fields + ('user_who_posted','pub_date',
-                'topic_text',)
+            return self.readonly_fields + ('user_who_posted','pub_date',)
         return self.readonly_fields
 
 # Classes must be above the registration

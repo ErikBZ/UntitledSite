@@ -10,12 +10,18 @@ li{
 
 div.table{
   min-height: 10em;
+  width: 70%;
+  margin: auto;
 }
 
 div.box{
-  width: 70%;
   margin: auto;
   min-height: 5em;
   border: 1px solid black;
   background-color: gray;
+}
+
+#post_info{
+  font-size: 12px;
+  padding-left: 12px;
 }
