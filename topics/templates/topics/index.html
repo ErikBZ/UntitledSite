@@ -11,8 +11,13 @@
     <div class="table">
       <ul>
         {% for topic in list_of_topics %}
-        <!-- link to itself for now then i'll link them to their own posts -->
-        <li><a href="/topics/{{topic.id}}/">
+        <!--
+          I had the url namespaces to topics since that is the app app_name
+          Now that i have topics:one_topic as the url everything work since it
+          looks under the "topics" namespce for urls IE index, one_topic
+          then looks for the regex called "one_topic"
+        -->
+        <li><a href="{% url 'topics:one_topic' topic.id %}">
           <div class="box">
             <p> {{ forloop.counter }}: {{ topic.topic_text }}</p>
             <p id="post_info">

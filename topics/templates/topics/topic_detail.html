@@ -2,7 +2,19 @@
   <title> This is a thing </title>
 </head>
 <body>
+    {% if topic %}
     <p>
-      This was working just fine the whole time
+      {{ topic.user_who_posted }}
     </p>
+    <p>
+      {{ topic.pub_date }}
+    </p>
+    <p>
+      {{ topic.description_text }}
+    </p>
+    {% else %}
+    <p>
+      This should actually be a 404 error
+    </p>
+    {% endif %}
 </body>

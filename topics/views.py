@@ -17,7 +17,12 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         return Topic.objects.all()
 
-class TopicDetailedView(generic.ListView):
+'''
+    Intstead of it being a ListView it need to be a DetailView
+    Maybe because DetailViews are smart about picking up which
+    object it needs and naming it accordingly. In this case it is called "topic"
+'''
+class TopicDetailedView(generic.DetailView):
     model = Topic
     template_name = 'topics/topic_detail.html'
 

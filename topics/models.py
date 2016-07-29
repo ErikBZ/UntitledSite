@@ -8,7 +8,7 @@ class Topic(models.Model):
     topic_text = models.CharField(max_length = 300)
     description_text = models.TextField(max_length=400, default="Put description here")
     pub_date = models.DateTimeField('Date Posted')
-    replies = models.IntegerField(default=0)
+    number_of_replies = models.IntegerField(default=0)
     user_who_posted = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __rep__(self):
