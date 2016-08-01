@@ -12,6 +12,8 @@ Long Term Goals
 Short Term Goals
 
 /// DONE a. Get topics listed out on the index page
-b. Be able to click on a topic and see the description
-c. Create a banner where you can choose to log in or submit
-d. Be able to log into the website
+/// DONE b. Be able to click on a topic and see the description
+c. Add replies model and make those viewable as well
+d. Create a banner viewable from the entire site
+e. Be able to log into the website
+f. Submit new post

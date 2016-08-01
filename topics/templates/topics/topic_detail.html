@@ -1,20 +1,27 @@
 <head>
+  {% load staticfiles %}
+  <link rel="stylesheet" type="text/css" href="{% static 'topics/topic_detail_style.css' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'topics/index_style.css' %}"/>
   <title> This is a thing </title>
 </head>
 <body>
-    {% if topic %}
-    <p>
-      {{ topic.user_who_posted }}
-    </p>
-    <p>
-      {{ topic.pub_date }}
-    </p>
-    <p>
-      {{ topic.description_text }}
-    </p>
-    {% else %}
-    <p>
-      This should actually be a 404 error
-    </p>
-    {% endif %}
+  {% if topic %}
+  <div class="table">
+    <div id="detail_box">
+      <h4>
+        {{ topic.topic_text }}
+      </h4>
+      <p id="post_info">
+        User: {{ topic.user_who_posted }} Published: {{ topic.pub_date }}
+      </p>
+      <div id="desc">
+        {{ topic.description_text }}
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <p>
+    This should actually be a 404 error
+  </p>
+  {% endif %}
 </body>

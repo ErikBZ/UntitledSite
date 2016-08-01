@@ -19,7 +19,7 @@
         -->
         <li><a href="{% url 'topics:one_topic' topic.id %}">
           <div class="box">
-            <p> {{ forloop.counter }}: {{ topic.topic_text }}</p>
+            <h4> {{ forloop.counter }}: {{ topic.topic_text }}</h4>
             <p id="post_info">
               By user: {{ topic.user_who_posted }} at {{ topic.pub_date }}
             </p>

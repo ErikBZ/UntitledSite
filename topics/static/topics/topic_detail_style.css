@@ -1,0 +1,11 @@
+#detail_box{
+  background-color: #F2F2F2;
+  padding-bottom: 10px;
+}
+#desc{
+  height: 10em;
+  width: 96%;
+  padding-left: 12px;
+  margin: auto;
+  outline: 1px solid black;
+}
