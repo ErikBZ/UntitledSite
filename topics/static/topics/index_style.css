@@ -1,7 +1,11 @@
+html *{
+  font-size: 1em;
+  font-family: Arial;
+}
 a{
   text-decoration: none;
 }
-a:visited{
+div.table a:visited{
   color: #555;
 }
 body{
@@ -23,4 +27,30 @@ div.box:hover{
 #post_info{
   color: #2F2F2F;
   padding-left: 12px;
+}
+/*
+  I can use an id #nav and then I can pass it down like #nav li
+  I'll fix that later too lazy right now
+*/
+ul.nav_bar{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #555;
+}
+ul.nav_bar li{
+  float: right;
+}
+
+ul.nav_bar li a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 14px;
+  text-align: none;
+}
+
+ul.nav_bar li a:hover{
+  background-color: #222;
 }

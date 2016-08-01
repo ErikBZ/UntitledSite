@@ -3,7 +3,7 @@ GOALS for this site and project:
 Long Term Goals
 
 1. Be able to register an account. Username and Password
-2. Be able to post a topic and have other accounts reply < string with this
+2. Be able to post a topic and have other accounts reply < starting with this
   a. Let's get topics listed out
 3. List topics by time of creation
 4. Also learn about server and database management
@@ -14,7 +14,7 @@ Short Term Goals
 /// DONE a. Get topics listed out on the index page
 /// DONE b. Be able to click on a topic and see the description
 c. Add replies model and make those viewable as well
-d. Create a banner viewable from the entire site
+// DONE d. Create a banner viewable from the entire site
 e. Be able to log into the website
 f. Submit new post
-g. Use another database instead of SQLlite
+// DONE g. Use another database instead of SQLlite
