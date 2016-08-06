@@ -15,11 +15,18 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from . import views
-
 
 urlpatterns = [
     url(r'^topics/', include('topics.urls')),
     url(r'^admin/', admin.site.urls),
-    url('^', include('django.contrib.auth.urls'))
+    url(r'^login/', 'topics.views.user_login', name="user_login"),
 ]
+
+'''
+    apparently i needed to have name='name' instead of just a string
+    also it seems like it's best to put this in my topics apps folder instead
+    url(r'^login/', views.login_default, name='login_default' ),
+    Even though the login view is not in the root folder i can still do this
+    so that i don't have a /topics/login situtation instead its just login
+    woo hoo
+'''

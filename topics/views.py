@@ -29,3 +29,7 @@ class TopicDetailedView(generic.DetailView):
 def detail(request, topic_id):
     top = get_object_or_404(Topic, pk=topic_id)
     return render(request, 'topics/topic_detail.html', {'topic':top})
+
+def user_login(request):
+    template_name = 'topics/login.html'
+    return render(request, template_name)
