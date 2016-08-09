@@ -15,6 +15,6 @@ Short Term Goals
 /// DONE b. Be able to click on a topic and see the description
 c. Add replies model and make those viewable as well
 // DONE d. Create a banner viewable from the entire site
-e. Be able to log into the website
+// e. Be able to log into the website
 f. Submit new post
 // DONE g. Use another database instead of SQLlite
