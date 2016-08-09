@@ -3,9 +3,10 @@
 </head>
 
 <body>
-	{% csrf_token %}
 	<p>Well this is a thing, this is the template under /topics/</p>
 	<form class="form-horizontal" method="post">
+		<!-- I have to have csrf_token inside the form -->
+		{% csrf_token %}
 		<input type="username" name="username" placeholder="username">
 		<input type="password" name="password" placeholder="password">
 		<button type="submit" class="btn">Login</button>

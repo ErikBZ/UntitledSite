@@ -10,9 +10,23 @@
 
   <ul class="nav_bar">
     <li style="float:left"><a href="{% url 'topics:index' %}">Home</a></li>
+ 
+    {% if user.is_authenticated %}
+    <li><a href="{% url 'user_logout' %}">Logout</a></li>
+    {% else %}
     <li><a href="{% url 'user_login' %}">Login</a></li>
+    {% endif %}
+ 
     <li><a href="{% url 'topics:index' %}">Submit</a></li>
-    <li><a href="{% url 'topics:index' %}">Profile</a></li>
+ 
+    {% if user.is_authenticated %}
+    <!--
+      Block tags are encased in {#{%%}#} and variables are {#{{}}#}
+      also I need to use {##} to comment out the django template thingies
+    -->
+    <li><a href="{% url 'topics:index' %}">Profile: {{ user.username }} </a></li>
+    {% endif %}    
+ 
   </ul>
 
   {% if list_of_topics %}
@@ -27,7 +41,9 @@
       -->
       <li><a href="{% url 'topics:one_topic' topic.id %}">
         <div class="box">
-          <h4> {{ forloop.counter }}: {{ topic.topic_text }}</h4>
+          <h4>
+            {{ forloop.counter }}: {{ topic.topic_text }}
+          </h4>
           <p id="post_info">
             By user: {{ topic.user_who_posted }} at {{ topic.pub_date }}
           </p>

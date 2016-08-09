@@ -4,8 +4,7 @@
 }
 #desc{
   height: 10em;
-  width: 96%;
-  padding-left: 12px;
   margin: auto;
-  outline: 1px solid black;
+  border-top: 1px dotted;
+  border-spacing: 12px;
 }

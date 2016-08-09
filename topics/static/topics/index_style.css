@@ -26,7 +26,6 @@ div.box:hover{
 }
 #post_info{
   color: #2F2F2F;
-  padding-left: 12px;
 }
 /*
   I can use an id #nav and then I can pass it down like #nav li
