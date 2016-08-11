@@ -1,0 +1,37 @@
+<!--
+	base.html for a the webstie. Has the navbar so it can be more easily edited
+-->
+<head>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'topics/base_style.css' %}">
+	{% block extra_css %}{% endblock %}
+	<title>{% block title%} Change the title {% endblock %}</title>
+</head>
+
+<body>
+	<ul id="nav">
+	    <li style="float:left"><a href="{% url 'topics:index' %}">Home</a></li>
+	 
+	    {% if user.is_authenticated %}
+	    <li><a href="{% url 'user_logout' %}">Logout</a></li>
+	    {% else %}
+	    <li><a href="{% url 'user_login' %}">Login</a></li>
+	    {% endif %}
+	 
+	    <li><a href="{% url 'topics:index' %}">Submit</a></li>
+			 
+	    {% if user.is_authenticated %}
+	    <!--
+	      	Block tags are encased in {#{%%}#} and variables are {#{{}}#}
+	      	also I need to use {##} to comment out the django template thingies
+	    -->
+	    <li><a href="{% url 'topics:index' %}">Profile: {{ user.username }} </a></li>
+	    {% endif %}    
+
+	</ul>
+
+	<div>
+		{% block content %}
+		{% endblock %}
+	</div>
+</body>

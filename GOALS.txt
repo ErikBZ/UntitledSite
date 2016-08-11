@@ -18,3 +18,6 @@ c. Add replies model and make those viewable as well
 // e. Be able to log into the website
 f. Submit new post
 // DONE g. Use another database instead of SQLlite
+h. Be able to look through your profile
+i. Create a base.html so that the navbar can be easily edited
+	and I don't have to keep changing things in a bunch of files

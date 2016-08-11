@@ -11,7 +11,7 @@ def index(response):
 
 class IndexView(generic.ListView):
     model = Topic
-    template_name = 'topics/index.html'
+    template_name = 'topics/homepage.html'
     context_object_name = 'list_of_topics'
 
     '''
@@ -21,8 +21,8 @@ class IndexView(generic.ListView):
 
     '''
         it seems that user is also defined as a context object
-        i'm not setting it here and i can still use it in index.html
-    '''
+        i'm not setting it here and i can still use it in index.htm
+l    '''
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
         return context

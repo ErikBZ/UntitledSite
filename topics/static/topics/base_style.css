@@ -1,0 +1,30 @@
+html *{
+	font-size: 1em;
+	font-family: Arial;
+}
+a{
+	text-decoration: none;
+}
+
+/* Using and id for the nav bar */
+#nav{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+  	overflow: hidden;
+  	background-color: #555;
+}
+#nav li{
+	float: right;
+}
+
+#nav li a{
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 14px;
+}
+
+#nav li a:hover{
+	background-color: #222;
+}
