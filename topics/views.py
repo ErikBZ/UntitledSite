@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404, render
 from django.views import generic
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import UserManager
 import datetime
 
 from .models import Topic
@@ -23,8 +24,8 @@ class IndexView(generic.ListView):
 
     '''
         it seems that user is also defined as a context object
-        i'm not setting it here and i can still use it in index.htm
-l    '''
+        i'm not setting it here and i can still use it in index.html
+    '''
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
         return context
@@ -83,6 +84,17 @@ def user_login(request):
             if user.is_active:
                 login(request, user)
                 return HttpResponseRedirect('/topics/')
+
+    return render(request, template_name)
+
+def register_user(request):
+    template_name = 'topics/register_user.html'
+    if request.POST:
+        email = request.POST['email']
+        username = request.POST['username']
+        password = request.POST['password']
+        UserManager.create_user(username=username, password=password, email=email)
+        return HttpResponseRedirect('/topics/')
 
     return render(request, template_name)
 

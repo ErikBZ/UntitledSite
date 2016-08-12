@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
 <!--
 	base.html for a the webstie. Has the navbar so it can be more easily edited
 -->
@@ -22,12 +25,10 @@
 		    <li><a href="{% url 'topics:index' %}">Profile: {{ user.username }} </a></li>
 	    {% else %}
 		    <li><a href="{% url 'user_login' %}">Login</a></li>
-		    <li><a href="{% url 'topics:index' %}">Register</a>
+		    <li><a href="{% url 'register' %}">Register</a>
 	    {% endif %}
 	</ul>
 
-	<div>
-		{% block content %}
-		{% endblock %}
-	</div>
+	{% block content %}
+	{% endblock %}
 </body>

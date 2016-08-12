@@ -3,14 +3,19 @@
   will also be used by the detail page
 */
 
-.box{
-	width: 70%;
-  	margin: auto;
-  	background-color: #F2F2F2;
+h4{
+	margin: 0;
+}
+p{
+	font-size: 12px;
+	margin: 0;
 }
 
-.box p{
-	font-size: 12px;
+.box{
+	padding: 10px;
+	width: 60%;
+  	margin: auto;
+  	background-color: #F2F2F2;
 }
 
 .box:hover{

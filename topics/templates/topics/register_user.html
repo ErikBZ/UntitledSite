@@ -1,0 +1,16 @@
+{% extends 'topics/base.html' %}
+
+{% block title %} Thanks for joining! {% endblock %}
+
+{% block content %}
+	<form>
+		{% csrf_token %}
+		Email:
+		<input type="text" name="email"><br>
+		Username:
+		<input type="username" name="username"><br>
+		Password:
+		<input type="password" name="password"><br>
+		<input type="submit" name="btn">
+	</form>
+{% endblock %}
