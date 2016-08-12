@@ -13,21 +13,17 @@
 	    <li style="float:left"><a href="{% url 'topics:index' %}">Home</a></li>
 	 
 	    {% if user.is_authenticated %}
-	    <li><a href="{% url 'user_logout' %}">Logout</a></li>
+		    <li><a href="{% url 'user_logout' %}">Logout</a></li>
+		    <li><a href="{% url 'topics:submit_post' %}">Submit</a></li>
+		    <!--
+		      	Block tags are encased in {#{%%}#} and variables are {#{{}}#}
+		      	also I need to use {##} to comment out the django template thingies
+		    -->
+		    <li><a href="{% url 'topics:index' %}">Profile: {{ user.username }} </a></li>
 	    {% else %}
-	    <li><a href="{% url 'user_login' %}">Login</a></li>
+		    <li><a href="{% url 'user_login' %}">Login</a></li>
+		    <li><a href="{% url 'topics:index' %}">Register</a>
 	    {% endif %}
-	 
-	    <li><a href="{% url 'topics:index' %}">Submit</a></li>
-			 
-	    {% if user.is_authenticated %}
-	    <!--
-	      	Block tags are encased in {#{%%}#} and variables are {#{{}}#}
-	      	also I need to use {##} to comment out the django template thingies
-	    -->
-	    <li><a href="{% url 'topics:index' %}">Profile: {{ user.username }} </a></li>
-	    {% endif %}    
-
 	</ul>
 
 	<div>

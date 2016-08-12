@@ -7,30 +7,24 @@
 {% block title %} Homepage {% endblock %}
 
 {% block content %}
-  {% if list_of_topics %}
-  <div>
-    <ul>
-      {% for topic in list_of_topics %}
-      <!--
-        I had the url namespaces to topics since that is the app app_name
-        Now that i have topics:one_topic as the url everything work since it
-        looks under the "topics" namespce for urls IE index, one_topic
-        then looks for the regex called "one_topic"
-      -->
-      <li id="box"><a href="{% url 'topics:one_topic' topic.id %}">
-        <div">
-          <h4>
-            {{ forloop.counter }}: {{ topic.topic_text }}
-          </h4>
-          <p>
-            By user: {{ topic.user_who_posted }} at {{ topic.pub_date }}
-          </p>
-        </div>
-      </a></li>
-      {% endfor %}
-    </ul>
-  </div>
-  {% else %}
-    <p> There are not topics to display :(</p>
-  {% endif %}
+	{% if list_of_topics %}
+	<ul>
+		{% for topic in list_of_topics %}
+		<!--
+			I had the url namespaces to topics since that is the app app_name
+			Now that i have topics:one_topic as the url everything work since it
+			looks under the "topics" namespce for urls IE index, one_topic
+			then looks for the regex called "one_topic"
+		-->
+		<li style="list-style-type: none;"><a href="{% url 'topics:one_topic' topic.id %}">
+			<div class="box">
+				<h4> {{ topic.topic_text }} </h4>
+				<p> By user: {{ topic.user_who_posted }} at {{ topic.pub_date }}</p>
+			</div>
+		</a></li>
+	  	{% endfor %}
+	</ul>
+	{% else %}
+	<p> There are not topics to display :(</p>
+	{% endif %}
 {% endblock %}

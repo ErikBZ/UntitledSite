@@ -1,0 +1,17 @@
+{% extends 'topics/base.html' %}
+
+{% block title %} Submit Your Post! {% endblock %}
+
+{% block content %}
+	<p>
+		Hello {{ user }}. Submit your post!
+	</p>
+	<form method="post">	
+		{% csrf_token %}
+		Post Title<br>
+		<input type="text" name="title"><br>
+		Post Description<br>
+		<input type="text" name="desc"><br>
+		<input type="submit" name="btn">
+	</form>
+{% endblock %}

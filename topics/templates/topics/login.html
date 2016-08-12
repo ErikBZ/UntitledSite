@@ -1,8 +1,8 @@
-<head>
-	<title>Login</title>
-</head>
+{% extends 'topics/base.html' %}
 
-<body>
+{% block title %} Login {% endblock %}
+
+{% block content %}
 	<p>Well this is a thing, this is the template under /topics/</p>
 	<form class="form-horizontal" method="post">
 		<!-- I have to have csrf_token inside the form -->
@@ -11,4 +11,4 @@
 		<input type="password" name="password" placeholder="password">
 		<button type="submit" class="btn">Login</button>
 	</form>
-</body>
+{% endblock %}

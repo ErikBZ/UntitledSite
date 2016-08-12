@@ -1,10 +1,23 @@
-/* CSS for the homagepage file */
+/* 
+  CSS for the homagepage file 
+  will also be used by the detail page
+*/
 
-#box{
-  width: 70%;
-  margin: auto;
-  background-color: #EEE;
-  list-style-type: none;
+.box{
+	width: 70%;
+  	margin: auto;
+  	background-color: #F2F2F2;
 }
-#box li{
+
+.box p{
+	font-size: 12px;
+}
+
+.box:hover{
+	background-color: #DDD;
+}
+
+.box:visited{
+	width: 50%;
+	background-color: #FFF;
 }

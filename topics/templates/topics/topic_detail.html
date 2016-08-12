@@ -1,35 +1,22 @@
-<head>
-  {% load staticfiles %}
-  <link rel="stylesheet" type="text/css" href="{% static 'topics/topic_detail_style.css' %}"/>
-  <link rel="stylesheet" type="text/css" href="{% static 'topics/index_style.css' %}"/>
-  <title> This is a thing </title>
-</head>
-<body>
+{% extends 'topics/base.html' %}
 
-  <ul class="nav_bar">
-    <li style="float:left"><a href="{% url 'topics:index' %}">Home</a></li>
-    <li><a href="{% url 'user_login' %}">Login</a></li>
-    <li><a href="{% url 'topics:index' %}">Submit</a></li>
-    <li><a href="{% url 'topics:index' %}">Profile</a></li>
-  </ul>
+{% load staticfiles %}
 
-  {% if topic %}
-  <div class="table">
-    <div id="detail_box">
-      <h4>
-        {{ topic.topic_text }}
-      </h4>
-      <p id="post_info">
-        User: {{ topic.user_who_posted }} Published: {{ topic.pub_date }}
-      </p>
-      <p id="desc">
-        {{ topic.description_text }}
-      </p>
-    </div>
-  </div>
-  {% else %}
-  <p>
-    This should actually be a 404 error
-  </p>
-  {% endif %}
-</body>
+{% block extra_css %}
+  	<link rel="stylesheet" type="text/css" href="{% static 'topics/index_style.css' %}">
+ 	 <link rel="stylesheet" type="text/css" href="{% static 'topics/topic_detail_style.css' %}">
+{% endblock%}
+
+{% block title %} {{ topic.topic_text }}{% endblock %}
+
+{% block content %}
+	<ul>
+	  	<div class="box">
+	    	<h4> {{ topic.topic_text }}</h4>
+	    	<p> By user: {{ topic.user_who_posted }} at {{ topic.pub_date }}</p>
+	    	<p id="desc">
+	    		{{ topic.description_text }}
+	    	</p>
+	  	</div>
+  	</ul>
+{% endblock %}

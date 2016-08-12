@@ -4,6 +4,7 @@ html *{
 }
 a{
 	text-decoration: none;
+	color:inherit;
 }
 
 /* Using and id for the nav bar */
@@ -13,6 +14,7 @@ a{
 	padding: 0;
   	overflow: hidden;
   	background-color: #555;
+  	width: auto;
 }
 #nav li{
 	float: right;
@@ -25,6 +27,6 @@ a{
 	padding: 14px 14px;
 }
 
-#nav li a:hover{
+#nav a:hover{
 	background-color: #222;
 }

@@ -2,6 +2,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.views import generic
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+import datetime
 
 from .models import Topic
 
@@ -40,6 +42,33 @@ class TopicDetailedView(generic.DetailView):
     basic login view, i just need to fix up the css for the login page
     so it doesn't look like ass
 '''
+
+
+'''
+    Oh shit this works
+'''
+@login_required
+def submit_post(request):
+    template_name = 'topics/submit_post_form.html'
+
+    topic_text = ''
+    description_text = ''
+    pub_date = ''
+    number_of_replies = 0
+    user_who_posted = ''
+
+    if request.POST:
+        topic_text = request.POST['title']
+        description_text = request.POST['desc']
+        pub_date = datetime.datetime.now()
+        user_who_posted = request.user
+        new_topic = Topic.objects.create(topic_text=topic_text,
+            description_text=description_text, pub_date=pub_date,
+            user_who_posted=user_who_posted, number_of_replies=number_of_replies)
+        return HttpResponseRedirect('/topics/{}'.format(new_topic.id))
+
+    return render(request, template_name)
+
 def user_login(request):
 
     template_name = 'topics/login.html'
