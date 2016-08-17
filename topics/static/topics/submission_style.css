@@ -1,0 +1,31 @@
+/* overriding stuff */
+.box:hover{
+	background-color: #F2F2F2;
+}
+
+h1{
+	text-align: center;
+}
+.post_box{
+	width: 100%;
+	padding: 0;
+	display: block;
+	border-width: 0px;
+	resize: none;
+}
+
+.btn{
+	border-color: black;
+	border-width: 1px;
+	background-color: #555;
+	color: white;
+	padding: 5px 4px;
+	cursor: pointer;
+}
+.btn:hover{
+	background-color: #222;
+}
+
+#post_data{
+	/* just for using text area */
+}

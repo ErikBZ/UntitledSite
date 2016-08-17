@@ -1,17 +1,27 @@
 {% extends 'topics/base.html' %}
 
+{% load staticfiles %}
+
+{% block extra_css %}
+	<link rel="stylesheet" type="text/css" href="{% static 'topics/login_style.css' %}">
+{% endblock %}
+
 {% block title %} Thanks for joining! {% endblock %}
 
 {% block content %}
-	<h1>Create an account</h1>
-	<form method="post">
-		{% csrf_token %}
-		Email:
-		<input type="text" name="email"><br>
-		Username:
-		<input type="username" name="username"><br>
-		Password:
-		<input type="password" name="password"><br>
-		<input type="submit" name="btn">
-	</form>
+	<div class = 'login_box'>
+		<h1>Create an account</h1>
+		<form method="post">
+			{% csrf_token %}
+			<div class="auth_box">
+				Email:
+				<input type="text" name="email"><br>
+				Username:
+				<input type="username" name="username"><br>
+				Password:
+				<input type="password" name="password"><br>
+				<button type="submit" class="btn">Sign Up</button>
+			<div>
+		</form>
+	</div>
 {% endblock %}

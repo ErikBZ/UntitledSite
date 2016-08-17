@@ -5,11 +5,14 @@
 	margin-top: 5%;
 	padding: 0;
 	box-sizing: border-box;
+	background-color: #F2F2F2; 
+	border-style: solid;
+	border-color: #555;
+	border-width: 1px;
 }
 
-.login_box p{
+.login_box h1{
 	text-align: center;
-
 }
 
 .login_box form{
@@ -24,5 +27,24 @@
 }
 
 .auth_box input{
+	border-style: none;
+	display: block;
+	padding: 5px 0px;
+	outline: none;
 	width: 100%;
+	background-color: white;
+}
+
+.btn{
+	border-color: black;
+	border-width: 1px;
+	background-color: #555;
+	color: white;
+	width: 100%;
+	padding: 5px 0px;
+	cursor: pointer;
+}
+
+.btn:hover{
+	background-color: #222;
 }

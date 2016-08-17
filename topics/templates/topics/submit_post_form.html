@@ -2,16 +2,24 @@
 
 {% block title %} Submit Your Post! {% endblock %}
 
+{% load staticfiles %}
+{% block extra_css %}
+	<link rel="stylesheet" type="text/css" href="{% static 'topics/index_style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'topics/submission_style.css' %}">
+{% endblock %}
+
 {% block content %}
-	<p>
+	<h1>
 		Hello {{ user }}. Submit your post!
-	</p>
-	<form method="post">	
-		{% csrf_token %}
-		Post Title<br>
-		<input type="text" name="title"><br>
-		Post Description<br>
-		<input type="text" name="desc"><br>
-		<input type="submit" name="btn">
-	</form>
+	</h1>
+	<div class="box" style="">
+		<form method="post" id="post_data">	
+			{% csrf_token %}
+			<label>Post Title</label><br>
+			<textarea name="title" class="post_box" form="post_data"></textarea><br>
+			<label>Post Description</label><br>
+			<textarea name="desc" class="post_box" form="post_data" rows="5"></textarea><br>
+			<input type="submit" name="btn" class="btn">
+		</form>
+	</div>
 {% endblock %}
