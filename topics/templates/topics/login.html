@@ -1,14 +1,24 @@
 {% extends 'topics/base.html' %}
 
+{% load staticfiles %}
+
+{% block extra_css %}<link rel="stylesheet" type="text/css" href="{% static 'topics/login_style.css' %}">{% endblock %}
+
 {% block title %} Login {% endblock %}
 
 {% block content %}
-	<p>Well this is a thing, this is the template under /topics/</p>
-	<form class="form-horizontal" method="post">
-		<!-- I have to have csrf_token inside the form -->
-		{% csrf_token %}
-		<input type="username" name="username" placeholder="username"><br>
-		<input type="password" name="password" placeholder="password"><br>
-		<button type="submit" class="btn">Login</button>
-	</form>
+	<div class="login_box">
+		<form method="post">
+			<p>Please Login!</p>
+			<!-- I have to have csrf_token inside the form -->
+			{% csrf_token %}
+			<div class="auth_box">
+				<label>Username</label><br>
+				<input type="username" name="username" placeholder="username"><br>
+				<label>Password</label><br>
+				<input type="password" name="password" placeholder="password"><br>
+				<button type="submit" class="btn">Login</button>
+			</div>
+		</form>
+	</div>
 {% endblock %}

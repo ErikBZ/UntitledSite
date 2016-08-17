@@ -3,7 +3,8 @@
 {% block title %} Thanks for joining! {% endblock %}
 
 {% block content %}
-	<form>
+	<h1>Create an account</h1>
+	<form method="post">
 		{% csrf_token %}
 		Email:
 		<input type="text" name="email"><br>

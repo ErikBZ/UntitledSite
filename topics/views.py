@@ -2,8 +2,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.views import generic
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import UserManager
 import datetime
 
 from .models import Topic
@@ -93,7 +93,12 @@ def register_user(request):
         email = request.POST['email']
         username = request.POST['username']
         password = request.POST['password']
-        UserManager.create_user(username=username, password=password, email=email)
+        User.objects.create_user(username, email, password)
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+        
         return HttpResponseRedirect('/topics/')
 
     return render(request, template_name)

@@ -1,0 +1,28 @@
+.login_box{
+	line-height: 1.5;
+	width: 340px;
+	margin: 0 auto;
+	margin-top: 5%;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.login_box p{
+	text-align: center;
+
+}
+
+.login_box form{
+	display: block;
+	width: 100%;
+	margin-top: 0;
+}
+
+.auth_box{
+	margin:0;
+	padding: 20px;
+}
+
+.auth_box input{
+	width: 100%;
+}
