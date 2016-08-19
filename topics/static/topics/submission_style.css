@@ -6,6 +6,11 @@
 h1{
 	text-align: center;
 }
+
+label{
+	font-size: 14px;
+}
+
 .post_box{
 	width: 100%;
 	padding: 0;

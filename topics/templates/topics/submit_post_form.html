@@ -15,11 +15,40 @@
 	<div class="box" style="">
 		<form method="post" id="post_data">	
 			{% csrf_token %}
-			<label>Post Title</label><br>
-			<textarea name="title" class="post_box" form="post_data"></textarea><br>
-			<label>Post Description</label><br>
-			<textarea name="desc" class="post_box" form="post_data" rows="5"></textarea><br>
+
+			<label>Post Title: <span id="title_counter"></span></label><br>
+			<textarea 
+				name="title" class="post_box"
+				form="post_data" rows="3"
+				maxlength="{{ model.topic_max_length }}"
+				onkeypress="textCounter(this, 'title_counter','{{ model.topic_max_length }}');"></textarea><br>
+
+			
+			<label>Post Description: <span id="desc_counter"></span></label><br>
+			<textarea
+				name="desc" class="post_box"
+				form="post_data" rows="12"
+				maxlength="{{ model.desc_max_length }}"
+				onkeypress="textCounter(this, 'desc_counter', '{{ model.desc_max_length }}');"></textarea><br>
+
+
 			<input type="submit" name="btn" class="btn">
+			<script>
+				function textCounter(field, field2, maxLimit)
+				{
+					var counter = document.getElementById(field2);
+					if(field.value.length > maxLimit)
+					{
+						field.textContent = field.textContent.substring(0, maxLimit);
+						return false;
+					}
+					else
+					{
+						counter.textContent = maxLimit - field.value.length;
+					}
+				}
+			</script>
 		</form>
 	</div>
 {% endblock %}
+

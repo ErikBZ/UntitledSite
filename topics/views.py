@@ -44,6 +44,9 @@ class TopicDetailedView(generic.DetailView):
     so it doesn't look like ass
 '''
 
+class UserProfileView(generic.DetailView):
+    model = User
+
 
 '''
     Oh shit this works
@@ -51,6 +54,11 @@ class TopicDetailedView(generic.DetailView):
 @login_required
 def submit_post(request):
     template_name = 'topics/submit_post_form.html'
+
+    model = Topic
+    context = {
+        'model':Topic,
+    }
 
     topic_text = ''
     description_text = ''
@@ -66,9 +74,10 @@ def submit_post(request):
         new_topic = Topic.objects.create(topic_text=topic_text,
             description_text=description_text, pub_date=pub_date,
             user_who_posted=user_who_posted, number_of_replies=number_of_replies)
+        print(description_text)
         return HttpResponseRedirect('/topics/{}'.format(new_topic.id))
 
-    return render(request, template_name)
+    return render(request, template_name, context)
 
 def user_login(request):
 

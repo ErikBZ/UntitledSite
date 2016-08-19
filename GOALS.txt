@@ -8,6 +8,7 @@ Long Term Goals
 3. List topics by time of creation or with some other algorithmn
 4. Also learn about server and database management
 5. Maybe deploy this somehow, Idk
+6. Implement some way of having posts go above other stuff, kinda like upvotes
 
 Short Term Goals
 
@@ -20,4 +21,5 @@ c. Add replies model and make those viewable as well
 /// DONE g. Use another database instead of SQLlite
 h. Be able to look through your profile
 /// DONEi. Create a base.html so that the navbar can be easily edited
+j. Be able to mantain the same formatting as what the user posted
 	and I don't have to keep changing things in a bunch of files
